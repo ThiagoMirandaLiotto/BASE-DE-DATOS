@@ -1,5 +1,7 @@
 #1) Listar los nombres de los proveedores de la ciudad de La Plata.
-select nombre from proveedor where ciudad = "La Plata";
+create view ejercicio1Vista as select nombre from proveedor where ciudad = "La Plata";
+
+select * from ejercicio1Vista;
 #2) Eliminar los artículos que no están compuestos por ningún material.
 delete from articulo where not exists
 	(select material_codigo from compuesto_por where codigo = material_codigo);
