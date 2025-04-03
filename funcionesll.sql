@@ -86,3 +86,26 @@ drop function stock;
 select * from products;
 select stock("S12_1099");
 #----------Ejercicio 6----------:
+#6- Crear una función que reciba un año y devuelva el top 3 productos más vendidos (por
+#cantidad de unidades) en ese año, concatenados en un solo string separados por comas.
+
+delimiter //
+create function top3(anio int)returns text deterministic
+begin
+	declare masvendidos1 text;
+	declare masvendidos2 text;
+	declare masvendidos3 text;
+	declare resultado text;
+    
+    set masvendidos1 = (select count(*) as cantidad from orderdetails join orders on orderdetails.orderNumber = orders.orderNumber where year(orderdate) = anio group by productCode order by cantidad desc limit 1);
+	set masvendidos2 = (select count(*) as cantidad from orderdetails join orders on orderdetails.orderNumber = orders.orderNumber where year(orderdate) = anio group by productCode order by cantidad desc limit 1,1);
+    set masvendidos3 = (select count(*) as cantidad from orderdetails join orders on orderdetails.orderNumber = orders.orderNumber where year(orderdate) = anio group by productCode order by cantidad desc limit 1,2);
+
+    set resultado = concat_ws('', masvendidos1, masvendidos2, masvendidos3);
+    return resultado;
+end //
+delimiter ; 
+
+drop function top3;
+select * from orders;
+select top3(2003);
