@@ -143,7 +143,35 @@ begin
 end
 //delimiter ;
 #-----------Ejercicio 10------------;
-
+delimiter //
+create procedure ordenesCanceladas (out cantOrdenes int) 
+begin
+declare hayFilas boolean default 1;
+declare orderNumber1 int;
+declare orderDate1 date;
+declare requiredDate1 date;
+declare shippedDate1 date;
+declare status1 varchar(45);
+declare comments1 varchar(45);
+declare customerNumber1 int;
+declare contador int default 0;
+declare recorrer cursor for select orderNumber, orderDate, requiredDate, shippedDate, status, comments, customerNumber from orders;
+declare continue handler for not found set hayFilas = 0;
+open recorrer;
+bucle:loop
+fetch recorrer into orderNumber1,orderDate1,requiredDate1,shippedDate1,status1,customerNumber1;
+if hayFilas = 0 then
+leave bucle;
+end if;
+if status1="Cancelled" then
+set contador=contador+1;
+set cantOrdenes=contador;
+insert into CanceledOrders values(orderNumber1,orderDate1, requiredDate1, shippedDate1, status1, comments1, customerNumber1);
+end if;
+end loop bucle;
+close recorrer;
+end//
+delimiter ;
 
 #-----------Ejercicio 11-----------:
 delimiter //
@@ -223,7 +251,38 @@ call telefonosClientesInactivos(@telefonos);
 
 
 #-----------Ejercicio 13-----------:
-
+delimiter //
+create procedure comisiones (out comision float) 
+begin
+declare plata int default 0;
+declare hayFilas boolean default 1;
+declare sales int;
+declare amounti float;
+declare recorrer cursor for select salesRepEmployeeNumber, customers.customersNumber from customers join payments on payments.customerNumber=customers.customerNumber;
+declare continue handler for not found set hayFilas = 0;
+open recorrer;
+bucle:loop
+fetch recorrer into sales, customerNumber1;
+if hayFilas = 0 then
+leave bucle;
+end if;
+ 
+select sum(amount) into plata from payments join customers on customers.customerNumber=payments.customerNumber where payments.customerNumber=customerNumber1;
+if plata>100000
+then 
+set comision=plata+plata*0.5;
+else if plata between 99999 and 50000
+then
+set comision=plata+plata*0.3;
+else
+set comision=plata;
+end if;
+end if;
+ 
+end loop bucle;
+close recorrer;
+end//
+delimiter ;
 
 
 #-----------Ejercicio 14-----------:
