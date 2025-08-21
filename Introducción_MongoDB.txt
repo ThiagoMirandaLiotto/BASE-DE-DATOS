@@ -1,0 +1,21 @@
+2_ db.usuarios.find({edad: {$gt: 25}}, {nombre: 1, apellido: 1})
+ 
+3_ db.usuarios.find({compras: {$size: 2}}, {_id: 1, apellido: 2})
+ 
+4_ db.usuarios.find({},{"compras.monto":2})
+ 
+5_ db.usuarios.find({"compras.6": {$exists: true}})
+ 
+6_ db.usuarios.find({"compras.id_compra": 1}, {"compras.productos": 1})
+
+7_db.usuarios.updateOne({_id:2},{$push:{compras: {id_compra: 77, monto: 25.5, $push:{productos: {1:"Joystick", 2:"consolador"}}}}})
+ 
+8_db.usuarios.updateOne(  { nombre: "Lucas", apellido: "Martinez" },{ $set: { mail: "lucas.martinez@example.com" } })
+ 
+9_db.usuarios.find({}, {"compras.id_compra":1, "compras.monto":1}).sort({"compras.monto":-1}).limit(3)
+ 
+10_db.usuarios.find({"compras.productos":{$nin :["televisor"]}}, {nombre:1, mail:1}).sort({edad:-1})
+ 
+11_db.usuarios.find({"compras.productos":{$in :["laptop"]}}, {id:0, nombre:1})
+ 
+12_db.usuarios.find({"compras.monto":{$gt :250}, "compras.producto":{$in :["televisor"]}}, {})

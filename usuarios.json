@@ -1,0 +1,177 @@
+[{
+  "_id": 1,
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "edad": 28,
+  "mail": "juan.perez@example.com",
+  "compras": [
+    {
+      "id_compra": 1,
+      "monto": 120.5,
+      "productos": [
+        "laptop",
+        "mouse",
+        "teclado"
+      ]
+    },
+    {
+      "id_compra": 2,
+      "monto": 15,
+      "productos": [
+        "cuaderno"
+      ]
+    },
+    {
+      "id_compra": 3,
+      "monto": 200,
+      "productos": [
+        "celular",
+        "funda",
+        "cargador",
+        "auriculares"
+      ]
+    }
+  ]
+},{
+  "_id": 2,
+  "nombre": "María",
+  "apellido": "Gómez",
+  "edad": 22,
+  "mail": "maria.gomez@example.com",
+  "compras": [
+    {
+      "id_compra": 4,
+      "monto": 300,
+      "productos": [
+        "televisor",
+        "soporte",
+        "hdmi",
+        "control remoto"
+      ]
+    },
+    {
+      "id_compra": 5,
+      "monto": 25.5,
+      "productos": [
+        "libro",
+        "agenda"
+      ]
+    },
+    {
+      "id_compra": 77,
+      "monto": 25.5,
+      "$push": {
+        "productos": {
+          "1": "Joystick",
+          "2": "consolador"
+        }
+      }
+    }
+  ]
+},{
+  "_id": 3,
+  "nombre": "Lucas",
+  "apellido": "Martínez",
+  "edad": 35,
+  "mail": "lucas.martinez@example.com",
+  "compras": [
+    {
+      "id_compra": 6,
+      "monto": 50,
+      "productos": [
+        "mousepad"
+      ]
+    },
+    {
+      "id_compra": 7,
+      "monto": 90,
+      "productos": [
+        "cafetera",
+        "tazas",
+        "filtros",
+        "azúcar",
+        "café",
+        "leche"
+      ]
+    }
+  ]
+},{
+  "_id": 4,
+  "nombre": "Sofía",
+  "apellido": "Fernández",
+  "edad": 40,
+  "mail": "sofia.fernandez@example.com",
+  "compras": [
+    {
+      "id_compra": 8,
+      "monto": 500,
+      "productos": [
+        "heladera",
+        "freezer",
+        "organizador",
+        "luz LED",
+        "termostato",
+        "filtro de agua"
+      ]
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "68a70f2a7f201d6877adcadb"
+  },
+  "nombre": "santi",
+  "apellido": "buhler",
+  "edad": 17,
+  "mail": "santibuhler@gmail.com"
+},{
+  "_id": {
+    "$oid": "68a70fed7f201d6877adcadc"
+  },
+  "nombre": "santino",
+  "apellido": "geretto",
+  "edad": 17,
+  "mail": "sangamefan@yahoo.com",
+  "compras": [
+    {
+      "id": 0,
+      "nombre": "caca"
+    },
+    {
+      "id": 1,
+      "nombre": "xd"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "68a713ec7f201d6877adcae0"
+  },
+  "nombre": "thiago",
+  "apellido": "miranda",
+  "edad": 5,
+  "mail": "thiagomirandalitoot@hotmail.com",
+  "compras": [
+    {
+      "id_compra": 10,
+      "monto": 600,
+      "productos": [
+        {
+          "1": "heladera"
+        },
+        {
+          "2": "tele"
+        },
+        {
+          "3": "microondas"
+        }
+      ]
+    },
+    {
+      "id_compra": 11,
+      "monto": 200,
+      "productos": [
+        "papa",
+        "papa"
+      ]
+    }
+  ]
+}]
