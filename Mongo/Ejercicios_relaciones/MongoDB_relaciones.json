@@ -1,0 +1,90 @@
+1)
+db.empleado.insertOne(
+  {
+      "_id": 1,
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "mail": "juan.perez@example.com",
+      "nacimiento": "04/02/2002",
+      "puesto": "jefe",
+      "carnet":
+        { "num_serie": 1, "fecha_emision": 04/01/2010, "fecha_vencimiento":  04/01/2026}
+    })
+
+2)
+db.usuario.insertOne({
+  "_id": 1,
+  "nombre": "María",
+  "apellido": "Gómez",
+  "email": "maria.gomez@example.com",
+  "clave": "1234segura",
+  "direcciones": [
+    {
+      "calle": "Av. Siempre Viva 742",
+      "ciudad": "Springfield",
+      "codigo_postal": "12345",
+      "provincia": "Buenos Aires"
+    },
+    {
+      "calle": "Calle Falsa 123",
+      "ciudad": "Shelbyville",
+      "codigo_postal": "54321",
+      "provincia": "Córdoba"
+    }
+  ]
+}
+
+3)
+db.pedidos.insertOne({
+  "id": 1,
+  "fecha": "02/01/2025",
+  "productos":[{
+    "id": 1,
+    "cantidad": 2,
+    "precio": 200
+    },
+    {"id": 2,
+    "cantidad": 3,
+    "precio": 300
+    }],
+  "monto total": 1300,
+  "id_usuario": 1
+})
+
+4)foto pizarron profe chat Santi(porque lo hicimos mal)
+
+5)
+db.profesores.insertMany([
+  {
+    "_id": 1,
+    "nombre": "Laura",
+    "apellido": "Martínez",
+    "email": "laura.martinez@example.com",
+    "id_materia": [101]
+  },
+  {
+    "_id": 2,
+    "nombre": "Carlos",
+    "apellido": "Pérez",
+    "email": "carlos.perez@example.com",
+    "materia": [202]
+  }
+])
+ 
+
+db.materias.insertMany([
+  {
+    "_id": 101,
+    "nombre": "Álgebra",
+    "codigo": "MAT101",
+    "horas_semanales": 4,
+    "profesores": [1] // referencia al profesor Laura
+  },
+  {
+    "_id": 102,
+    "nombre": "Programación I",
+    "codigo": "INF102",
+    "horas_semanales": 6,
+    "profesores": [1, 2] // dictan Laura y Carlos
+  }
+])
