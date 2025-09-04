@@ -1,0 +1,157 @@
+[{
+  "_id": {
+    "$oid": "68b97b73fe0d53b82c38ebff"
+  },
+  "nombre": "HotelJulio",
+  "mail": "HotelJulio@yahoo.com",
+  "direccion": "Macedonio Fernandez 5444",
+  "telefono": 0,
+  "pet_friendly": "No",
+  "cajas_seguridad": "No",
+  "wifi": "Si",
+  "comodidades": [
+    {
+      "tipo": "restaurante",
+      "nombre": "RestauranteJulio",
+      "horario": "19:00hs - 00:00"
+    },
+    {
+      "tipo": "spa",
+      "nombre": "spaJulio",
+      "horario": "12:00hs - 18:00hs"
+    },
+    {
+      "tipo": "restaurante",
+      "nombre": "dadRestaurant",
+      "horario": "12:00hs - 00:00hs"
+    },
+    {
+      "tipo": "pileta",
+      "nombre": "swimpool",
+      "horario": "7:00hs - 20:00hs"
+    }
+  ],
+  "promociones": [
+    {
+      "motivo": "navidad",
+      "porcentaje": 50,
+      "fecha_inicio": "1-12-2025",
+      "fecha_fin": "26-12-2025"
+    },
+    {
+      "motivo": "año nuevo",
+      "porcentaje": 25,
+      "fecha_inicio": "16-12-2025",
+      "fecha_fin": "1-1-2026"
+    },
+    {
+      "motivo": "semana de la niniez",
+      "porcentaje": 25,
+      "fecha_inicio": "20-11-2025",
+      "fecha_fin": "27-11-2025"
+    },
+    {
+      "motivo": "semana del recam",
+      "porcentaje": 10,
+      "fecha_inicio": "5-12-2025",
+      "fecha_fin": "12-12-2025"
+    }
+  ],
+  "sectores": [
+    {
+      "nombre": "spa",
+      "telefono": 123124124
+    },
+    {
+      "nombre": "recepcion",
+      "telefono": 123124124
+    },
+    {
+      "nombre": "pileta",
+      "telefono": 41224124
+    },
+    {
+      "nombre": "sala de juegos",
+      "telefono": 41224124
+    }
+  ],
+  "lugaresRecreacion": [
+    {
+      "tipo": "teatro",
+      "nombre": "Teatio",
+      "direccion": "tutio123",
+      "telefono": 541245351,
+      "horario": "20:00hs - 01:00",
+      "diasCerrado": [
+        "Domingo",
+        "Lunes"
+      ],
+      "ubicacion": "detras del dep 1",
+      "sitioWeb": "tutioteatro.com.ar"
+    },
+    {
+      "tipo": "parque",
+      "nombre": "ParqueLeluar",
+      "direccion": "leluar 6552",
+      "telefono": {
+        "$numberLong": "5412138351"
+      },
+      "horario": "00:00hs - 23:59",
+      "diasCerrado": [],
+      "ubicacion": "Saavedra",
+      "sitioWeb": "parqueleluar.com.ar"
+    },
+    {
+      "tipo": "museo",
+      "nombre": "Musenico",
+      "direccion": "Cons 4421",
+      "telefono": {
+        "$numberLong": "5412450891"
+      },
+      "horario": "9:00hs - 16:00",
+      "diasCerrado": [
+        "Miercoles",
+        "Martes"
+      ],
+      "ubicacion": "Devoto",
+      "sitioWeb": "musenico.com.ar"
+    },
+    {
+      "tipo": "teatro",
+      "nombre": "Reteat",
+      "direccion": "Recam123",
+      "telefono": 541245351,
+      "horario": "20:00hs - 00:00",
+      "diasCerrado": [
+        "Lunes",
+        "Martes"
+      ],
+      "ubicacion": "Recoleta",
+      "sitioWeb": "Reteat.com.ar"
+    }
+  ],
+  "numeros utiles": [
+    {
+      "nombre": "servicio1",
+      "numero": 521341242
+    },
+    {
+      "nombre": "servicio2",
+      "numero": 221341242
+    },
+    {
+      "nombre": "servicio3",
+      "numero": 521351242
+    },
+    {
+      "nombre": "servicio4",
+      "numero": 121341242
+    }
+  ],
+  "mensajes": [
+    101,
+    102,
+    103,
+    104
+  ]
+}]

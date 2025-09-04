@@ -1,0 +1,17 @@
+[{
+  "_id": 101,
+  "usuario": "recam@gmail.com",
+  "contenido": "Hola, a que hora es el check-in?"
+},{
+  "_id": 102,
+  "usuario": "buhler@gmail.com",
+  "contenido": "Hola, cuanto cuesta la noche en la habitacion mas barata y miserable del hotel"
+},{
+  "_id": 103,
+  "usuario": "sanga@gmail.com",
+  "contenido": "Hola"
+},{
+  "_id": 104,
+  "usuario": "thiago@gmail.com",
+  "contenido": "Hola."
+}]
