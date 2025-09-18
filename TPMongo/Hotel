@@ -53,8 +53,16 @@
     {
       "motivo": "semana del recam",
       "porcentaje": 10,
-      "fecha_inicio": "5-12-2025",
-      "fecha_fin": "12-12-2025"
+      "fecha_inicio": {
+        "$date": {
+          "$numberLong": "1751328000000"
+        }
+      },
+      "fecha_fin": {
+        "$date": {
+          "$numberLong": "1759276800000"
+        }
+      }
     }
   ],
   "sectores": [
