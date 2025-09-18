@@ -12,8 +12,37 @@ db.Hotel.find({"promociones.porcentaje": 10},{nombre:1});
 
 /*7*/
 db.Hotel.find({promociones.motivo: "jubilados"});
-/*
 
+/*9*/
+db.Hotel.find(
+  { "lugaresRecreacion.tipo": "museo", "lugaresRecreacion.nombre": "MALBA" },
+  { nombre:1, direccion:1, telefono:1, _id:0 }
+);
+
+/*10*/
+let hotel = db.Hotel.aggregate([ { $sample: { size: 1 } } ]).next();
+db.Hotel.updateOne(
+  { _id: hotel._id },
+  { $push: {
+      promociones: {
+        motivo: "promo septiembre",
+        porcentaje: 12,
+        fecha_inicio: ISODate("2025-09-10"),
+        fecha_fin: ISODate("2025-10-10")
+      }
+    },
+    $currentDate: { ultima_actualizacion: true }
+  }
+
+/*12*/
+db.Hotel.find({
+  promociones: {
+    $elemMatch: {
+      motivo: { $regex: /(jubil|estudiant)/i }
+    }
+  }
+}, { nombre:1, promociones:1 });
+/*
 5. Agregar un campo “ultima_actualizacion” con la 
 fecha actual a todos los documentos de hoteles. 
 Siempre que se actualice el documento se debe setear 
