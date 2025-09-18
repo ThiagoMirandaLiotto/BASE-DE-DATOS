@@ -16,6 +16,12 @@ db.Hotel.find({"promociones.porcentaje": 10},{nombre:1});
 /*7*/
 db.Hotel.find({promociones.motivo: "jubilados"});
 
+/*8*/
+db.Hotel.updateMany(
+  {"numeros utiles.nombre": "Policia"},  
+  {$set: {"numeros utiles.$.numero": "0800-911"}}
+);
+
 /*9*/
 db.Hotel.find(
   { "lugaresRecreacion.tipo": "museo", "lugaresRecreacion.nombre": "MALBA" },
@@ -169,9 +175,3 @@ db.Hotel.updateMany(
 );
 
 
-
-Tener en cuenta tanto los casos en los que existe como en los que no existe el
-campo.
-21.Utilizando el método updateMany() dar un ejemplo de cada uno de los
-siguientes operadores: $inc, $max, $mul, $rename, $unset, $pop, $pull y $push.
-*/
